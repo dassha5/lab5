@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Книги{% endblock %}
+
+{% block content %}
+<section class="page-block">
+    <h2>Книги</h2>
+    <p>Невелика добірка художніх книжок</p>
+
+    <div class="books-grid">
+        {% for book in books %}
+        <article class="book-card">
+            <div class="book-cover-wrapper">
+                <img src="{{ url_for('static', filename='images/' ~ book.image) }}" alt="{{ book.title }}"
+                    class="book-cover">
+            </div>
+
+            <div class="book-info">
+                <h3 class="book-title">{{ book.title }}</h3>
+                <p class="book-author">{{ book.author }}</p>
+
+                <div class="book-meta">
+                    <span class="book-rating">★ {{ "%.1f"|format(book.rating) }}</span>
+                    <span class="book-price">{{ book.price }} грн</span>
+                </div>
+
+                <form action="{{ url_for('add_to_cart', book_id=book.id) }}" method="post">
+                    <button type="submit" class="btn">Додати в корзину</button>
+                </form>
+
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
