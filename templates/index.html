@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}Головна — Книжковий сайт{% endblock %}
+
+{% block content %}
+
+<div class="hero-banner">
+    <img src="{{ url_for('static', filename='images/base.jpg') }}" alt="Книжкова обкладинка" class="hero-image">
+</div>
+
+<section class="welcome-text">
+    <div class="page-block">
+        <h2 class="author-title">Автори</h2>
+
+        <div class="authors-slider">
+            <div class="author-card">
+                <div class="author-photo-wrapper">
+                    <img src="{{ url_for('static', filename='images/author1.webp') }}" alt="Сара Джанет Маас"
+                        class="author-photo">
+                </div>
+                <p class="author-name">Сара Джанет Маас</p>
+            </div>
+
+            <div class="author-card">
+                <div class="author-photo-wrapper">
+                    <img src="{{ url_for('static', filename='images/author2.jpg') }}" alt="Голлі Блек"
+                        class="author-photo">
+                </div>
+                <p class="author-name">Голлі Блек</p>
+            </div>
+
+            <div class="author-card">
+                <div class="author-photo-wrapper">
+                    <img src="{{ url_for('static', filename='images/author3.jpg') }}" alt="Голлі Блек"
+                        class="author-photo">
+                </div>
+                <p class="author-name">Фріда Мак-Фадден</p>
+            </div>
+
+            <div class="author-card">
+                <div class="author-photo-wrapper">
+                    <img src="{{ url_for('static', filename='images/author4.jpg') }}" alt="Фріда Мак-Фадден"
+                        class="author-photo">
+                </div>
+                <p class="author-name">Стефані Ґарбер</p>
+            </div>
+
+            <div class="author-card">
+                <div class="author-photo-wrapper">
+                    <img src="{{ url_for('static', filename='images/author5.jpg') }}" alt="Стефані Ґарбер"
+                        class="author-photo">
+                </div>
+                <p class="author-name">Ана Хван</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-block">
+        <p class="intro-text" >
+            У розділі «Книги» ви знайдете підбірку цікавих творів.
+            А на сторінці «Про сайт» — коротка інформація про структуру та функціонал цього вебсайту.
+        </p>
+
+        
+    </div>
+
+</section>
+
+
+{% endblock %}
