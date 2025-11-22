@@ -1,0 +1,1 @@
+web: gunicorn Daryna_Bondarenko_lab5:app
