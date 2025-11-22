@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Книжковий сайт{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+
+<body>
+
+    <header>
+        <h1 class="header-title">Книжковий світ</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Головна</a>
+            <a href="{{ url_for('about') }}">Про сайт</a>
+            <a href="{{ url_for('books') }}">Книги</a>
+            <a href="{{ url_for('cart') }}">Корзина ({{ cart_count }})</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2025</p>
+    </footer>
+
+
+</body>
+
+</html>
